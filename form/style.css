@@ -1,0 +1,219 @@
+body{
+    height: 350px;
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    background: blueviolet;
+    border-radius: 10px;
+    box-shadow:  -35px 35px 70px #2f0882,35px -35px 70px #32b312;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: white;
+    margin: 10px;
+    top: 20px;
+  }
+  
+  .container .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  .input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .input:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .container .input:valid ~ .label,
+  .container .input:focus ~ .label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+  }
+  
+  .container .input:valid,
+  .container .input:focus {
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+
+button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+    cursor: pointer;
+    top: 40px;
+   }
+   
+   button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 9em;
+   }
+
+   .container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: white;
+  }
+  
+  .container2 .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  .input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .input:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .container2 .input:valid ~ .label,
+  .container2 .input:focus ~ .label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+  }
+  
+  .container2 .input:valid,
+  .container2 .input:focus {
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+
+  .spinner {
+    --size: 30px;
+    --first-block-clr: #005bba;
+    --second-block-clr: #fed500;
+    --clr: #111;
+    width: 100px;
+    height: 100px;
+    position: relative;
+   }
+   
+   .spinner::after,.spinner::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    left: 50%;
+    background: var(--first-block-clr);
+   }
+   
+   .spinner::after {
+    background: var(--second-block-clr);
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+   }
+   
+   @keyframes down {
+    0%, 100% {
+     transform: none;
+    }
+   
+    25% {
+     transform: translateX(100%);
+    }
+   
+    50% {
+     transform: translateX(100%) translateY(100%);
+    }
+   
+    75% {
+     transform: translateY(100%);
+    }
+   }
+   
+   @keyframes up {
+    0%, 100% {
+     transform: none;
+    }
+   
+    25% {
+     transform: translateX(-100%);
+    }
+   
+    50% {
+     transform: translateX(-100%) translateY(-100%);
+    }
+   
+    75% {
+     transform: translateY(-100%);
+    }
+   }
